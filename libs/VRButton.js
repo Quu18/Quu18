@@ -179,14 +179,16 @@ class VRButton{
 
     }
 
-    stylizeElement( element, active = true, fontSize = 13, ignorePadding = false ) {
+    stylizeElement(element, active = true, fontSize = 13, ignorePadding = false) {
 
         element.style.position = 'absolute';
-        element.style.bottom = '20px';
+        element.style.top = '50%';
+        element.style.left = '50%';
+        element.style.transform = 'translate(-50%, -50%)';
         if (!ignorePadding) element.style.padding = '12px 6px';
         element.style.border = '1px solid #fff';
         element.style.borderRadius = '4px';
-        element.style.background = (active) ? 'rgba(180,20,20,1)' : 'rgba(20,150,80,1)';
+        element.style.background = (active) ? 'rgba(180,20,20,1)' : 'rgba(20,150,80,1)'; // Changed to red when active
         element.style.color = '#fff';
         element.style.font = `normal ${fontSize}px sans-serif`;
         element.style.textAlign = 'center';
